@@ -1,0 +1,14 @@
+.line {
+  margin-top: 10px;
+  border: none;
+  border-top: 1px solid #120101;
+}
+.deleteButton {
+  float: right;
+  border: none;
+  background-color: #eeb312;
+
+  border-radius: 3px;
+  margin-top: 0px;
+  cursor: pointer;
+}

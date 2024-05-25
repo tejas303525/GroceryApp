@@ -1,0 +1,9 @@
+.grocerylist {
+  width: 200px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #7eb2dd;
+  box-shadow: 0 4px 4px black;
+  border-radius: 10px;
+}

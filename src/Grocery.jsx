@@ -14,7 +14,7 @@ export default function Grocery() {
         setItems={setItems}
         setPrices={setPrices}
       />
-      <GroceryList prices={prices} items={items} />
+      <GroceryList prices={prices} items={items} setItems={setItems} />
     </>
   );
 }

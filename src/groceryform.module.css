@@ -1,0 +1,23 @@
+.modernform {
+  width: 500px;
+  margin-top: 50px;
+  margin: 0 auto;
+  background-color: #7eb2dd;
+  box-shadow: 0 4px 4px black;
+  border-radius: 10px;
+  padding: 10px;
+}
+.Budgetbox {
+  width: 200px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 6px;
+  background-color: #7eb2dd;
+  box-shadow: 0 4px 4px black;
+  border-radius: 10px;
+}
+.modernbutton {
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}

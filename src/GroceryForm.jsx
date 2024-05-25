@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import styles from "./groceryform.module.css";
 export default function GroceryForm({ prices, items, setPrices, setItems }) {
   const [price, setPrice] = useState("");
   const [initialBudget, setInitialBudget] = useState("");
@@ -24,8 +24,8 @@ export default function GroceryForm({ prices, items, setPrices, setItems }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <center>
+    <div>
+      <div className={styles.Budgetbox}>
         <p>Budget: {initialBudget}</p>
         <p>Remaining budget: {remainingBudget}</p>
         <input
@@ -34,24 +34,29 @@ export default function GroceryForm({ prices, items, setPrices, setItems }) {
           type="number"
           placeholder="Enter budget"
         />
-      </center>
-      <br />
-      <p>Item:</p>
-      <input
-        onChange={(e) => setItem(e.target.value)}
-        value={item}
-        type="text"
-        placeholder="Enter item"
-      />
-      <p>Price:</p>
-      <input
-        onChange={(e) => setPrice(e.target.value)}
-        value={price}
-        type="number"
-        placeholder="Enter price"
-      />
-      <br />
-      <button type="submit">Add</button>
-    </form>
+      </div>
+      <form onSubmit={handleSubmit} className={styles.modernform}>
+        <br />
+        <p>Item:</p>
+        <input
+          onChange={(e) => setItem(e.target.value)}
+          value={item}
+          type="text"
+          placeholder="Enter item"
+        />
+        <p>Price:</p>
+        <input
+          onChange={(e) => setPrice(e.target.value)}
+          value={price}
+          type="number"
+          placeholder="Enter price"
+        />
+        <br />
+        <br />
+        <button className={styles.modernbutton} type="submit">
+          Add
+        </button>
+      </form>
+    </div>
   );
 }
