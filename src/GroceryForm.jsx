@@ -4,17 +4,21 @@ export default function GroceryForm({ prices, items, setPrices, setItems }) {
   const [price, setPrice] = useState("");
   const [initialBudget, setInitialBudget] = useState("");
   const [remainingBudget, setRemainingBudget] = useState("");
-  const [item, setItem] = useState("");
-
+  // const [item, setItem] = useState("");
+  const [item, setItem] = useState({ name: "", done: false });
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (item && price) {
+    if (item.name && price) {
       const priceValue = parseFloat(price);
-      setItems([...items, item]);
-      setPrices([...prices, priceValue]);
-      setItem("");
-      setPrice("");
-      setRemainingBudget((prevBudget) => prevBudget - priceValue);
+      if (remainingBudget - priceValue >= 0) {
+        setItems([...items, item]);
+        setPrices([...prices, priceValue]);
+        setItem({ name: "", done: false });
+        setPrice("");
+        setRemainingBudget((prevBudget) => prevBudget - priceValue);
+      } else {
+        alert("Not enough budget to add this item.");
+      }
     }
   };
   const handleInitialBudgetChange = (e) => {
@@ -39,8 +43,8 @@ export default function GroceryForm({ prices, items, setPrices, setItems }) {
         <br />
         <p>Item:</p>
         <input
-          onChange={(e) => setItem(e.target.value)}
-          value={item}
+          onChange={(e) => setItem({ name: e.target.value, done: false })}
+          value={item.name}
           type="text"
           placeholder="Enter item"
         />

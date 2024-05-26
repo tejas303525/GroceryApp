@@ -5,7 +5,7 @@ export default function GroceryList({ prices, items, setItems }) {
     <div className={style.grocerylist}>
       {items.map((item, index) => (
         <GroceryItem
-          key={index}
+          key={item.name}
           item={item}
           price={prices[index]}
           items={items}
