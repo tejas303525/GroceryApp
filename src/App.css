@@ -13,7 +13,3 @@ body {
   flex: 1;
   padding-bottom: 50px; /* Space for the footer */
 }
-
-footer {
-  height: 50px; /* Adjust based on your footer height */
-}
